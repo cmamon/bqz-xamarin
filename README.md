@@ -8,6 +8,7 @@
 ### **`Cahier des charges`**
   Connection au serveur RESTFUL afin de recevoir les messages envoyés par les montres-connectées(Envoi de message reservé uniquement aux montres-connectées).
   Applicatio composée de trois écrans : **`Affichage par liste`**, **`Affichage par carte`**, **`Affichage par détails`**
+  
   **`Affichage par liste`** :
     - • Cet ran présentera l’ensemble des messages stockés sur le serveur. Il s’agit d’une liste
       vertical défilante, de façon à pouvoir parcourir l’ensemble des messages. Afin de rafraîchir
