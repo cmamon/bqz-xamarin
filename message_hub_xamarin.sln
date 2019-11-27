@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "message-hub-xamarin.Android
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "message-hub-xamarin.iOS", "message-hub-xamarin.iOS\message-hub-xamarin.iOS.csproj", "{F76A38F9-0C78-4CB3-AF2F-16810790D154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "message-hub-xamarin", "message-hub-xamarin\message-hub-xamarin.csproj", "{6F3911AC-15E4-4904-A8F9-7E4B4DE9B48F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "message_hub_xamarin", "message-hub-xamarin\message_hub_xamarin.csproj", "{6F3911AC-15E4-4904-A8F9-7E4B4DE9B48F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

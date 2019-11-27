@@ -89,6 +89,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\message-hub-xamarin\message_hub_xamarin.csproj">
+      <Project>{6f3911ac-15e4-4904-a8f9-7e4b4de9b48f}</Project>
+      <Name>message_hub_xamarin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\message_hub_xamarin\message_hub_xamarin.csproj">
       <Project>{24D1ACDC-29B6-436A-BC0F-8722305A374F}</Project>
       <Name>message_hub_xamarin</Name>
