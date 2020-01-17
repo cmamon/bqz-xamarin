@@ -1181,24 +1181,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zorob\\.nuget\\packages\\": {},
+    "C:\\Users\\chris\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.iOS\\message-hub-xamarin.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.iOS\\message-hub-xamarin.iOS.csproj",
       "projectName": "message-hub-xamarin.iOS",
-      "projectPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.iOS\\message-hub-xamarin.iOS.csproj",
-      "packagesPath": "C:\\Users\\zorob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.iOS\\obj\\",
+      "projectPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.iOS\\message-hub-xamarin.iOS.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\zorob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1212,8 +1212,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj": {
-              "projectPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj"
+            "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj": {
+              "projectPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj"
             }
           }
         }

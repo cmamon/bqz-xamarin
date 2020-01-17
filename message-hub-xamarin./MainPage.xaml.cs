@@ -1,4 +1,5 @@
 ﻿
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,6 @@ namespace message_hub_xamarin
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-
         protected Clientinfo Client;
         
         public MainPage()
@@ -22,76 +22,137 @@ namespace message_hub_xamarin
             InitializeComponent();
             //Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
             //Xamarin.Forms.Maps
-
-
         }
 
-        public String getfromserver()
+        class Message
         {
-            
+            public Message(string Id, string StudentId, string GpsLat, string GpsLng, string StudentMessage)
+            {
+                this.Id = Id;
+                this.StudentId = StudentId;
+                this.GpsLat = GpsLat;
+                this.GpsLng = GpsLng;
+                this.StudentMessage = StudentMessage;
+            }
+
+            public string Id { get; set; }
+            public string StudentId { get; set; }
+            public string GpsLat { get; set; }
+            public string GpsLng { get; set; }
+            public string StudentMessage { get; set; }
+        }
+
+        public string getMessages()
+        {
             using (WebClient wc = new WebClient())
-                {
-                     var json = wc.DownloadString(Constants.address);
-                    // Console.WriteLine(json[0]);
-                     Console.WriteLine("blablabla");
-                     var json2 = JArray.Parse(json);
-                     List<Object> Gps_coordinnates = new List<Object>(100);
-                   
-                    
-
-                for (int i = 0; i < json2.Count; i++)
-                {
-            
-                    Gps_coordinnates.Add(json2[i].SelectToken("gps_lat"));
-                    Gps_coordinnates.Add(json2[i].SelectToken("gps_long"));
-                    Gps_coordinnates.Add(json2[i].SelectToken("student_message"));
-            
-                }
-
-                for(int i = 0; i < Gps_coordinnates.Count; i++)
-                {
-                    Console.WriteLine(Gps_coordinnates[i]);
-                }
-
-                //Console.WriteLine(i);
-                //Console.WriteLine(json2[i].SelectToken("id"));
-
-                //Gps_coordinnates[]
-
-
-
-                // Console.WriteLine(json2[0].SelectToken("id"));
-                // string zon = wc.DownloadString(Constants.address);
-                /*
-                     JArray jObject = JArray.Parse(json.ToString());
-                     string id = (string)jObject.SelectToken("id");
-                     string student_id = (string)jObject.SelectToken("student_id");
-                     string gps_lat = (string)jObject.SelectToken("gps_lat");
-                     string gps_long = (string)jObject.SelectToken("gps_long");
-                     string student_message = (string)jObject.SelectToken("student_messsage");
-                     
-                     Console.WriteLine("{0}, {1}, {2},{3},{4}", id, student_id, gps_lat,gps_long,student_message);                
-               */
-                return   json.ToString();
-                    
-                }
-
-                 
-
-     
+            {
+                var json = wc.DownloadString(Constants.address);
+                return json;
+            }
         }
 
         void ButtonClicked(object sender, EventArgs e)
         {
-
-            (sender as Button).Text = "clicked!";
+            (sender as Button).Text = "Refresh";
   
-            label3.Text = "ListOfMessages";
+            label3.Text = "Messages";
             label.Text = "";
-            label2.Text = getfromserver();
 
+            var messages = getMessages();
+            ShowMessageList(messages);
         }
 
-    
+        void ShowMessageList(string messages)
+        {
+            Label header = new Label
+            {
+                Text = "Message List",
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            JArray messageArray = JArray.Parse(messages);
+
+            List<Message> messageList = new List<Message>();
+
+            foreach (var message in messageArray) {
+                messageList.Add(new Message(
+                    (string)message.SelectToken("id"),
+                    (string)message.SelectToken("student_id"),
+                    (string)message.SelectToken("gps_lat"),
+                    (string)message.SelectToken("gps_long"),
+                    (string)message.SelectToken("student_messsage")
+                ));
+            }
+
+            ListView listView = new ListView
+            {
+                // Source of data items.
+                ItemsSource = messageList,
+
+                // Define template for displaying each item.
+                // (Argument of DataTemplate constructor is called for 
+                //      each item; it must return a Cell derivative.)
+                ItemTemplate = new DataTemplate(() =>
+                {
+                    // Create views with bindings for displaying each property.
+                    /*                    Label idLabel = new Label();
+                                        idLabel.SetBinding(Label.TextProperty, "id");
+                    */
+
+                    Label idLabel = new Label();
+                    idLabel.SetBinding(Label.TextProperty, "Id");
+
+                    Label studentIdLabel = new Label();
+                    studentIdLabel.SetBinding(Label.TextProperty, "StudentId");
+
+                    Label latitudeLabel = new Label();
+                    latitudeLabel.SetBinding(Label.TextProperty, "GpsLat");
+
+                    Label longitudeLabel = new Label();
+                    longitudeLabel.SetBinding(Label.TextProperty, "GpsLng");
+
+                    Label messageLabel = new Label();
+                    messageLabel.SetBinding(Label.TextProperty, "StudentMessage");
+
+                    // Return an assembled ViewCell.
+                    return new ViewCell
+                    {
+                        View = new StackLayout
+                        {
+                            Padding = new Thickness(0, 10),
+                            Orientation = StackOrientation.Horizontal,
+                            Children =
+                            {
+                                new StackLayout
+                                {
+                                    VerticalOptions = LayoutOptions.Center,
+                                    Spacing = 0,
+                                    Children =
+                                    {
+                                        idLabel,
+                                        studentIdLabel,
+                                        latitudeLabel,
+                                        longitudeLabel
+                                    }
+                                }
+                            }
+                        }
+                    };
+                })
+            };
+            // Accomodate iPhone status bar.
+            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+
+            // Build the page.
+            this.Content = new StackLayout
+            {
+                Children =
+                {
+                    header,
+                    listView
+                }
+            };
+        }
     }
 }

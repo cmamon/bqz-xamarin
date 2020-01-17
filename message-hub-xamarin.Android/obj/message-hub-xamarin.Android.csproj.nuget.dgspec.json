@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj": {}
+    "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj": {
+    "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj",
         "projectName": "message-hub-xamarin.Android",
-        "projectPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj",
-        "packagesPath": "C:\\Users\\zorob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin.Android\\obj\\",
+        "projectPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.Android\\message-hub-xamarin.Android.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\zorob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj": {
-                "projectPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj"
+              "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj": {
+                "projectPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj"
               }
             }
           }
@@ -48,11 +48,11 @@
             },
             "Xamarin.Android.Support.v4": {
               "target": "Package",
-              "version": "[23.4.0.1, )"
+              "version": "[28.0.0.3, )"
             },
             "Xamarin.Android.Support.v7.RecyclerView": {
               "target": "Package",
-              "version": "[23.4.0.1, )"
+              "version": "[28.0.0.3, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -70,20 +70,21 @@
         }
       }
     },
-    "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj": {
+    "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj",
         "projectName": "message_hub_xamarin",
-        "projectPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\message_hub_xamarin.csproj",
-        "packagesPath": "C:\\Users\\zorob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zorob\\OneDrive\\Bureau\\Xamarin_Project\\message-hub-xamarin\\obj\\",
+        "projectPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\message_hub_xamarin.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\projets\\bqz-xamarin\\message-hub-xamarin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\zorob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

@@ -11,20 +11,19 @@
 
         <Label x:Name="label3"
                Text=""
-               FontSize="50"
+               FontSize="30"
                FontAttributes="Bold"
                HorizontalOptions="Center" />
         
         <Label x:Name="label"
-           Text="Click the Button below"
+           Text="You can get the server messages by clicking the button below"
            FontSize="Large"
            HorizontalOptions="CenterAndExpand"
            VerticalOptions="CenterAndExpand" />
         
-
         <Button x:Name="Button1"
                 Clicked="ButtonClicked"
-                Text="Get From Server"
+                Text="Get messages"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand"
                 TextColor="Red"
@@ -33,7 +32,7 @@
         <ScrollView VerticalOptions="FillAndExpand"
                     Margin="10">
 
-           <Label x:Name="label2"
+            <Label x:Name="label2"
            Text=""
            FontSize="Large"
            HorizontalOptions="CenterAndExpand"
@@ -41,10 +40,5 @@
            />
 
         </ScrollView>
-
-
-
-
-
     </StackLayout>
 </ContentPage>
