@@ -44,15 +44,27 @@
           "dependencies": {
             "Xamarin.Android.Support.Core.Utils": {
               "target": "Package",
-              "version": "[28.0.0.1, )"
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[23.4.0.1, )"
+            },
+            "Xamarin.Android.Support.v7.RecyclerView": {
+              "target": "Package",
+              "version": "[23.4.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[1.3.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.2.0.709249, )"
+              "version": "[4.3.0.991221, )"
+            },
+            "Xamarin.Forms.Maps": {
+              "target": "Package",
+              "version": "[4.3.0.991221, )"
             }
           }
         }
@@ -112,7 +124,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.991211, )"
+              "version": "[4.3.0.991221, )"
+            },
+            "Xamarin.Forms.Maps": {
+              "target": "Package",
+              "version": "[4.3.0.991221, )"
             }
           },
           "imports": [

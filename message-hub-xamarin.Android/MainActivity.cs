@@ -16,6 +16,7 @@ namespace message_hub_xamarin.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            //Xamarin.FormsMaps(this, savedInstanceState);
 
             base.OnCreate(savedInstanceState);
 

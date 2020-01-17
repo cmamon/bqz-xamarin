@@ -1,0 +1,13 @@
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\bin\Debug\netstandard2.0\message_hub_xamarin.deps.json
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\bin\Debug\netstandard2.0\message_hub_xamarin.dll
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\bin\Debug\netstandard2.0\ref\message_hub_xamarin.dll
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\bin\Debug\netstandard2.0\message_hub_xamarin.pdb
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\message_hub_xamarin.csprojAssemblyReference.cache
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\message_hub_xamarin.AssemblyInfoInputs.cache
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\message_hub_xamarin.AssemblyInfo.cs
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\message_hub_xamarin.dll
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\ref\message_hub_xamarin.dll
+C:\Users\zorob\OneDrive\Bureau\Xamarin_Project\message-hub-xamarin\obj\Debug\netstandard2.0\message_hub_xamarin.pdb
