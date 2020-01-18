@@ -14,7 +14,6 @@ android.support.design.widget.CoordinatorLayout;C:\Users\chris\projets\bqz-xamar
 android.support.design.widget.TabLayout;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\layout\rootlayout.xml
 android.support.design.widget.TabLayout;obj\Debug\90\res\layout\tabbar.xml
 android.support.v7.widget.RecyclerView;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\layout\flyoutcontent.xml
-android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\message_list.xml
 android.support.v7.widget.Toolbar;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\layout\rootlayout.xml
 android.support.v7.widget.Toolbar;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\layout\shellcontent.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\toolbar.xml
@@ -30,7 +29,6 @@ FrameLayout;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\D
 item;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\values\styles.xml
 item;obj\Debug\90\res\values\styles.xml
 LinearLayout;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\layout\bottomtablayout.xml
-LinearLayout;obj\Debug\90\res\layout\message_list.xml
 paths;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;C:\Users\chris\projets\bqz-xamarin\message-hub-xamarin.Android\obj\Debug\90\lp\40\jl\res\values\styles.xml
 resources;obj\Debug\90\res\values\colors.xml

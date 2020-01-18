@@ -6,6 +6,9 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:label="message_hub_xamarin.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDYXU1LIgq96_oD39d06kxbs70C7ytNoI8" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="message_hub_xamarin" android:theme="@style/MainTheme" android:name="md5cdcb15b9f6f6a407f6a33e196bc24f09.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -29,7 +32,6 @@
       </intent-filter>
     </receiver>
     <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:exported="false" />
-    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
   <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 </manifest>

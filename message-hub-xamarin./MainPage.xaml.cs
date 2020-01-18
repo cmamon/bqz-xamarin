@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net;
+using message_hub_xamarin.models;
 using Xamarin.Forms;
 
 
@@ -16,6 +17,8 @@ namespace message_hub_xamarin
     public partial class MainPage : ContentPage
     {
         protected Clientinfo Client;
+
+        List<Message> messageList = new List<Message>();
 
         ActivityIndicator activityIndicator = new ActivityIndicator
         {
@@ -30,22 +33,11 @@ namespace message_hub_xamarin
             RefreshMessageList();
         }
 
-        class Message
+        void ShowMessageDetail(object sender, ItemTappedEventArgs e)
         {
-            public Message(string Id, string StudentId, string GpsLat, string GpsLng, string StudentMessage)
-            {
-                this.Id = Id;
-                this.StudentId = StudentId;
-                this.GpsLat = GpsLat;
-                this.GpsLng = GpsLng;
-                this.StudentMessage = StudentMessage;
-            }
-
-            public string Id { get; set; }
-            public string StudentId { get; set; }
-            public string GpsLat { get; set; }
-            public string GpsLng { get; set; }
-            public string StudentMessage { get; set; }
+            var position = e.Group;
+            var message = (Message)e.Item;
+            Navigation.PushAsync(new MessageDetailPage(message));
         }
 
         public string getMessages()
@@ -63,11 +55,12 @@ namespace message_hub_xamarin
             var messages = getMessages();
             activityIndicator.IsRunning = false;
 
-            ShowMessageList(messages);
+            updateMessageList(messages);
+            ShowMessageList(this.messageList);
 
             // Refresh message list each 30 seconds
             Device.StartTimer(TimeSpan.FromSeconds(30), () => {
-                Device.BeginInvokeOnMainThread(() => ShowMessageList(messages));
+                Device.BeginInvokeOnMainThread(() => ShowMessageList(this.messageList));
                 return true;
             });
         }
@@ -78,17 +71,53 @@ namespace message_hub_xamarin
             var messages = getMessages();
             activityIndicator.IsRunning = false;
 
-            ShowMessageList(messages);
+            updateMessageList(messages);
+            ShowMessageList(this.messageList);
         }
 
-        void ShowMessageList(string messages)
+        void updateMessageList (string messages)
+        {
+            messageList = new List<Message>();
+
+            JArray messageArray = JArray.Parse(messages);
+
+            foreach (var message in messageArray)
+            {
+                messageList.Add(new Message(
+                    (string)message.SelectToken("id"),
+                    (string)message.SelectToken("student_id"),
+                    (string)message.SelectToken("gps_lat"),
+                    (string)message.SelectToken("gps_long"),
+                    (string)message.SelectToken("student_message")
+                ));
+            }
+        }
+
+        async void Button2Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MapPage());
+        }
+
+        void ShowMessageList(List<Message> messagelist)
         {
             Label header = new Label
             {
-                Text = "Message List",
+                Text = "",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center
             };
+
+            Button mapButton = new Button
+            {
+                Text = "Display map",
+                TextColor = Xamarin.Forms.Color.White,
+                BackgroundColor = Xamarin.Forms.Color.SlateBlue,
+                CornerRadius = 20,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            mapButton.Clicked += Button2Clicked;
 
             Button refreshButton = new Button
             {
@@ -102,25 +131,11 @@ namespace message_hub_xamarin
 
             refreshButton.Clicked += ButtonClicked;
 
-            JArray messageArray = JArray.Parse(messages);
-
-            List<Message> messageList = new List<Message>();
-
-            foreach (var message in messageArray) {
-                messageList.Add(new Message(
-                    (string)message.SelectToken("id"),
-                    (string)message.SelectToken("student_id"),
-                    (string)message.SelectToken("gps_lat"),
-                    (string)message.SelectToken("gps_long"),
-                    (string)message.SelectToken("student_message")
-                ));
-            }
-
             ListView listView = new ListView
             {
                 // Source of data items.
-                ItemsSource = messageList,
-                
+                ItemsSource = this.messageList,
+                // Height of the items
                 RowHeight = 100,
 
                 // Define template for displaying each item.
@@ -151,7 +166,7 @@ namespace message_hub_xamarin
                     messageLabel.LineBreakMode = LineBreakMode.TailTruncation; // trucate message
                     
                     // Return an assembled ViewCell.
-                    return new ViewCell
+                    ViewCell viewCell = new ViewCell
                     {
                         View = new StackLayout
                         {
@@ -172,8 +187,14 @@ namespace message_hub_xamarin
                             }
                         }
                     };
+
+                    return viewCell;
                 })
             };
+
+            listView.ItemTapped += ShowMessageDetail;
+            listView.IsPullToRefreshEnabled = true;
+
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
@@ -184,6 +205,7 @@ namespace message_hub_xamarin
                 Children =
                 {
                     header,
+                    mapButton,
                     refreshButton,
                     listView
                 }

@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="message_hub_xamarin.MainPage">
+             x:Class="message_hub_xamarin.MainPage"
+             Title="Message List">
 
     <StackLayout>
         <!-- Place new controls here -->

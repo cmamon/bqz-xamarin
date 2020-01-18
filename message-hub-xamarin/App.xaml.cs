@@ -10,7 +10,7 @@ namespace message_hub_xamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage()); 
             
         }
 

@@ -816,11 +816,11 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Maps/4.3.0.991221": {
+      "Xamarin.Forms.Maps/4.4.0.991477": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.v7.AppCompat": "28.0.0.3",
-          "Xamarin.Forms": "4.3.0.991221",
+          "Xamarin.Forms": "4.4.0.991477",
           "Xamarin.GooglePlayServices.Maps": "60.1142.1"
         },
         "compile": {
@@ -2069,10 +2069,10 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Forms.Maps/4.3.0.991221": {
-      "sha512": "DU8xOje7jO2Ed90bNb7/BofjRi6QOQ4XXEStDd85ooGhFdd82MZ99ilnFKNljl7WI/r0XSZWKab2SKDiG5XSUg==",
+    "Xamarin.Forms.Maps/4.4.0.991477": {
+      "sha512": "uPOq1ncGc0S6zNI87kiQZiREW1ej/h6UNEMJuQWDOAuKjdgAVW2dtFZO77bG1hGGOmZetjBLD6mBQ70TGpV9Lw==",
       "type": "package",
-      "path": "xamarin.forms.maps/4.3.0.991221",
+      "path": "xamarin.forms.maps/4.4.0.991477",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2098,7 +2098,7 @@
         "lib/uap10.0/Xamarin.Forms.Maps.UWP.dll",
         "lib/uap10.0/Xamarin.Forms.Maps.UWP.pri",
         "lib/uap10.0/Xamarin.Forms.Maps.dll",
-        "xamarin.forms.maps.4.3.0.991221.nupkg.sha512",
+        "xamarin.forms.maps.4.4.0.991477.nupkg.sha512",
         "xamarin.forms.maps.nuspec"
       ]
     },
@@ -2168,7 +2168,7 @@
       "Xamarin.Android.Support.v7.RecyclerView >= 28.0.0.3",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.3.0.991221",
-      "Xamarin.Forms.Maps >= 4.3.0.991221",
+      "Xamarin.Forms.Maps >= 4.4.0.991477",
       "message_hub_xamarin >= 1.0.0"
     ]
   },
@@ -2236,10 +2236,22 @@
           },
           "Xamarin.Forms.Maps": {
             "target": "Package",
-            "version": "[4.3.0.991221, )"
+            "version": "[4.4.0.991477, )"
           }
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Passage à une version antérieure du package détecté : Xamarin.Forms de 4.4.0.991477 à 4.3.0.991221. Référencez le package directement à partir du projet pour sélectionner une version différente. \r\n message-hub-xamarin.Android -> Xamarin.Forms.Maps 4.4.0.991477 -> Xamarin.Forms (>= 4.4.0.991477) \r\n message-hub-xamarin.Android -> Xamarin.Forms (>= 4.3.0.991221)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    }
+  ]
 }
