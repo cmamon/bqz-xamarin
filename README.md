@@ -1,4 +1,10 @@
-AIzaSyDYXU1LIgq96_oD39d06kxbs70C7ytNoI8
+# Auteurs :
+
+## `BEYA NTUMBA Joel`
+## `ZORO-BI ZAH Jean-Emmanuel`
+## `QUENETTE Christophe`
+
+# Lien git de ce repository : `https://github.com/cmamon/bqz-xamarin.git`
 
 # HMIN30 -Programmation Cross-Platform avec Xamarin.Forms **` bqz-xamarin `**
 ## Conception d'une application Cross-Plateforme
