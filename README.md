@@ -1,4 +1,4 @@
-# HMIN30 -Programmation Cross-Platform avec Xamarin.Forms **` bqz-xamarin `**
+# HMIN309 -Programmation Cross-Platform avec Xamarin.Forms **` bqz-xamarin `**
 
 ## Conception d'une application Cross-Plateforme
 
