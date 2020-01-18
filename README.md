@@ -1,5 +1,17 @@
 # HMIN30 -Programmation Cross-Platform avec Xamarin.Forms **` bqz-xamarin `**
+
 ## Conception d'une application Cross-Plateforme
+
+
+### Auteurs :
+
+#### `BEYA NTUMBA Joel`
+#### `ZORO-BI ZAH Jean-Emmanuel`
+#### `QUENETTE Christophe`
+
+### Lien git de ce repository : 
+`https://github.com/cmamon/bqz-xamarin.git`
+
 
 ### **`Utilités`**
   Conception d'une application qui va afficher la liste des messages envoyé au serveur.
