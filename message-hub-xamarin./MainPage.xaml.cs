@@ -93,6 +93,9 @@ namespace message_hub_xamarin
             Button refreshButton = new Button
             {
                 Text = "Refresh list",
+                TextColor = Xamarin.Forms.Color.White,
+                BackgroundColor = Xamarin.Forms.Color.SlateBlue,
+                CornerRadius = 20,
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center
             };
@@ -181,15 +184,7 @@ namespace message_hub_xamarin
                 Children =
                 {
                     header,
-                    new StackLayout
-                    {
-                        Orientation = StackOrientation.Horizontal,
-                        Children =
-                        {
-                            refreshButton,
-                            activityIndicator
-                        }
-                    },
+                    refreshButton,
                     listView
                 }
             };
