@@ -16,12 +16,18 @@ namespace message_hub_xamarin
     public partial class MainPage : ContentPage
     {
         protected Clientinfo Client;
-        
+
+        ActivityIndicator activityIndicator = new ActivityIndicator
+        {
+            IsRunning = false
+        };
+
         public MainPage()
         {
             InitializeComponent();
             //Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
             //Xamarin.Forms.Maps
+            RefreshMessageList();
         }
 
         class Message
@@ -51,14 +57,27 @@ namespace message_hub_xamarin
             }
         }
 
+        void RefreshMessageList()
+        {
+            activityIndicator.IsRunning = true;
+            var messages = getMessages();
+            activityIndicator.IsRunning = false;
+
+            ShowMessageList(messages);
+
+            // Refresh message list each 30 seconds
+            Device.StartTimer(TimeSpan.FromSeconds(30), () => {
+                Device.BeginInvokeOnMainThread(() => ShowMessageList(messages));
+                return true;
+            });
+        }
+
         void ButtonClicked(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Refresh";
-  
-            label3.Text = "Messages";
-            label.Text = "";
-
+            activityIndicator.IsRunning = true;
             var messages = getMessages();
+            activityIndicator.IsRunning = false;
+
             ShowMessageList(messages);
         }
 
@@ -71,6 +90,15 @@ namespace message_hub_xamarin
                 HorizontalOptions = LayoutOptions.Center
             };
 
+            Button refreshButton = new Button
+            {
+                Text = "Refresh list",
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            refreshButton.Clicked += ButtonClicked;
+
             JArray messageArray = JArray.Parse(messages);
 
             List<Message> messageList = new List<Message>();
@@ -81,7 +109,7 @@ namespace message_hub_xamarin
                     (string)message.SelectToken("student_id"),
                     (string)message.SelectToken("gps_lat"),
                     (string)message.SelectToken("gps_long"),
-                    (string)message.SelectToken("student_messsage")
+                    (string)message.SelectToken("student_message")
                 ));
             }
 
@@ -89,6 +117,8 @@ namespace message_hub_xamarin
             {
                 // Source of data items.
                 ItemsSource = messageList,
+                
+                RowHeight = 100,
 
                 // Define template for displaying each item.
                 // (Argument of DataTemplate constructor is called for 
@@ -105,6 +135,7 @@ namespace message_hub_xamarin
 
                     Label studentIdLabel = new Label();
                     studentIdLabel.SetBinding(Label.TextProperty, "StudentId");
+                    studentIdLabel.FontAttributes = FontAttributes.Bold;
 
                     Label latitudeLabel = new Label();
                     latitudeLabel.SetBinding(Label.TextProperty, "GpsLat");
@@ -114,7 +145,8 @@ namespace message_hub_xamarin
 
                     Label messageLabel = new Label();
                     messageLabel.SetBinding(Label.TextProperty, "StudentMessage");
-
+                    messageLabel.LineBreakMode = LineBreakMode.TailTruncation; // trucate message
+                    
                     // Return an assembled ViewCell.
                     return new ViewCell
                     {
@@ -127,13 +159,11 @@ namespace message_hub_xamarin
                                 new StackLayout
                                 {
                                     VerticalOptions = LayoutOptions.Center,
-                                    Spacing = 0,
+                                    Spacing = 10,
                                     Children =
                                     {
-                                        idLabel,
                                         studentIdLabel,
-                                        latitudeLabel,
-                                        longitudeLabel
+                                        messageLabel
                                     }
                                 }
                             }
@@ -147,9 +177,19 @@ namespace message_hub_xamarin
             // Build the page.
             this.Content = new StackLayout
             {
+                Spacing = 15,
                 Children =
                 {
                     header,
+                    new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        Children =
+                        {
+                            refreshButton,
+                            activityIndicator
+                        }
+                    },
                     listView
                 }
             };

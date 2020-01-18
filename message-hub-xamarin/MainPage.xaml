@@ -10,17 +10,11 @@
         <!-- Place new controls here -->
 
         <Label x:Name="label3"
-               Text=""
-               FontSize="30"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-        
-        <Label x:Name="label"
-           Text="You can get the server messages by clicking the button below"
-           FontSize="Large"
-           HorizontalOptions="CenterAndExpand"
-           VerticalOptions="CenterAndExpand" />
-        
+               Text="You can get the server messages by clicking the button below"
+               FontSize="20"
+               VerticalOptions="CenterAndExpand"
+         />
+
         <Button x:Name="Button1"
                 Clicked="ButtonClicked"
                 Text="Get messages"
