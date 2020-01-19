@@ -72,6 +72,7 @@ namespace message_hub_xamarin
             activityIndicator.IsRunning = false;
 
             updateMessageList(messages);
+            Console.WriteLine(this.messageList);
             ShowMessageList(this.messageList);
         }
 

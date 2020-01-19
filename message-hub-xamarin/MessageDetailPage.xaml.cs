@@ -32,8 +32,8 @@ namespace message_hub_xamarin
             messageLabel.VerticalOptions = LayoutOptions.Center;
             messageLabel.HorizontalOptions = LayoutOptions.Center;
 
-            Console.WriteLine(this.message.StudentId);
-            Console.WriteLine(this.message.StudentMessage);
+            Console.WriteLine(this.message.GpsLat);
+            Console.WriteLine(this.message.GpsLng);
 
             this.Content = new StackLayout
             {
