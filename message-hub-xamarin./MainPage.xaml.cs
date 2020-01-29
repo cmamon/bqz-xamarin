@@ -20,10 +20,10 @@ namespace message_hub_xamarin
 
         List<Message> messageList = new List<Message>();
 
-        ActivityIndicator activityIndicator = new ActivityIndicator
+/*        ActivityIndicator activityIndicator = new ActivityIndicator
         {
             IsRunning = false
-        };
+        };*/
 
         public MainPage()
         {
@@ -37,7 +37,8 @@ namespace message_hub_xamarin
         {
             var position = e.Group;
             var message = (Message)e.Item;
-            Navigation.PushAsync(new MessageDetailPage(message));
+            
+            Navigation.PushAsync(new MessageDetailPage(message, messageList));
         }
 
         public string getMessages()
@@ -51,9 +52,7 @@ namespace message_hub_xamarin
 
         void RefreshMessageList()
         {
-            activityIndicator.IsRunning = true;
             var messages = getMessages();
-            activityIndicator.IsRunning = false;
 
             updateMessageList(messages);
             ShowMessageList(this.messageList);
@@ -67,12 +66,11 @@ namespace message_hub_xamarin
 
         void ButtonClicked(object sender, EventArgs e)
         {
-            activityIndicator.IsRunning = true;
+            // activityIndicator.IsRunning = true;
             var messages = getMessages();
-            activityIndicator.IsRunning = false;
+            // activityIndicator.IsRunning = false;
 
             updateMessageList(messages);
-            Console.WriteLine(this.messageList);
             ShowMessageList(this.messageList);
         }
 
@@ -101,13 +99,6 @@ namespace message_hub_xamarin
 
         void ShowMessageList(List<Message> messagelist)
         {
-            Label header = new Label
-            {
-                Text = "",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
-            };
-
             Button mapButton = new Button
             {
                 Text = "Display map",
@@ -119,7 +110,7 @@ namespace message_hub_xamarin
             };
 
             mapButton.Clicked += Button2Clicked;
-
+/*
             Button refreshButton = new Button
             {
                 Text = "Refresh list",
@@ -130,7 +121,7 @@ namespace message_hub_xamarin
                 HorizontalOptions = LayoutOptions.Center
             };
 
-            refreshButton.Clicked += ButtonClicked;
+            refreshButton.Clicked += ButtonClicked;*/
 
             ListView listView = new ListView
             {
@@ -195,19 +186,32 @@ namespace message_hub_xamarin
 
             listView.ItemTapped += ShowMessageDetail;
             listView.IsPullToRefreshEnabled = true;
+            listView.RefreshCommand = new Command(() =>
+            {
+                RefreshMessageList();
+                listView.IsRefreshing = false;
+            });
 
             // Accomodate iPhone status bar.
-            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    this.Padding = new Thickness(10, 0, 0, 0);
+                    break;
+                default:
+                    this.Padding = new Thickness(10, 10, 5, 0);
+                    break;
+            }
+
+            // this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
             // Build the page.
             this.Content = new StackLayout
             {
-                Spacing = 15,
+                Spacing = 20,
                 Children =
                 {
-                    header,
                     mapButton,
-                    refreshButton,
                     listView
                 }
             };
